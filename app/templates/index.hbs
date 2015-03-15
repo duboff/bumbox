@@ -1,0 +1,17 @@
+<div class="album-list">
+  {{#each}}
+    <div class="album">
+      <a class="ember-view" href="/album/1">
+        <img {{bind-attr src=artwork}}>
+      </a>
+      <p class="album-name">{{name}}</p>
+      <p class="album-artist">{{artist}}</p>
+      <p class="song-count">
+        {{songs.length}} songs
+        {{#if isExplicit}}
+          <span class='explicit'>EXPLICIT</span>
+        {{/if}}
+      </p>
+  </div>
+  {{/each}}
+</div>
