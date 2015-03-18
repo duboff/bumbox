@@ -5,26 +5,7 @@
   To make the tests pass, you will need to create a template that
   produces the following HTML for the song list.
 
-    <div class="album-info">
-      <img src="artwork.png">
-      <h1>Album Name</h1>
-      <h2>Artist Name</h2>
-    </div>
 
-    <table class="album-listing">
-      <!-- this should repeat once for each song -->
-      <tr>
-        <td class="song-track">
-          <span class="track-number"><!-- track number --></span>
-        </td>
-        <td class="song-name"><!-- song name --></td>
-        <td class="song-duration"><!-- song duration --></td>
-      </tr>
-      <!-- end repeat -->
-      <tr>
-        <td class="total-duration" colspan="3">Total Time: 40:03</td>
-      </tr>
-    </table>
 
   You can hardcode the total duration for now. We will update
   it with a calculated value in a later step.
