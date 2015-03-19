@@ -6,15 +6,6 @@ export default Ember.Component.extend({
   classNameBindings: ["isCurrentSong"],
   player: inject.service(),
 
-  actions: {
-    play: function() {
-      this.get('player').play(this.get('song'));
-    },
-    pause: function() {
-      this.get('player').pause();
-    }
-  },
-
   isCurrentSong: function() {
     return this.get('player.song') === this.get('song');
   }.property('player.song', 'song'),
