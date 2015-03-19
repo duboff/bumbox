@@ -10,13 +10,7 @@ export default DS.Model.extend({
   artist: attr('string'),
   isExplicit: attr('boolean'),
   songs: hasMany('songs'),
-  totalDuration: function() {
-    var durations = this.get('songs').map(function(song){
-      return song.get('duration');
-    });
-    return durations.reduce(function(a, b) {
-      return a + b;
-    });
-  }.property('songs.@each.duration'),
+  songDurations: Ember.computed.mapBy('songs', 'duration'),
+  totalDuration: Ember.computed.sum('songDurations'),
   songCount: Ember.computed.alias('songs.length')
-}); 
+});
