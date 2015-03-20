@@ -45,5 +45,9 @@ export default Ember.Service.extend({
   willDestroy: function () {
     this.get('audioElement').pause();
     this.set('audioElement.src', '');
-  }
+  },
+
+  remainingTime: function() {
+    return this.get('song.duration') - this.get('currentTime');
+  }.property('song.duration', 'currentTime')
 });

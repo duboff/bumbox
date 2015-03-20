@@ -7,8 +7,12 @@
     </p>
     <div class="now-playing-player">
       {{audio-control isPlaying=isPlaying}}
-      <p class="duration">
-        {{format-duration duration}}
+      <p class="duration" {{action 'toggleDuration'}}>
+        {{#if showElapsedTime}}
+          {{format-duration duration}}
+        {{else}}
+          {{format-duration remainingDuration}}
+        {{/if}}
       </p>
     </div>
   </div>

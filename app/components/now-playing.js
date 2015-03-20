@@ -8,5 +8,13 @@ export default Ember.Component.extend({
   player: inject.service(),
   song: computed.readOnly('player.song'),
   duration: computed.alias('player.currentTime'),
+  remainingDuration: computed.alias('player.remainingTime'),
   isPlaying: computed.alias('player.isPlaying'),
+  showElapsedTime: true,
+
+  actions: {
+    toggleDuration: function() {
+      this.toggleProperty('showElapsedTime');
+    }
+  }
 });
